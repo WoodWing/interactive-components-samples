@@ -123,8 +123,7 @@ This message is sent by the interactive component to the Digital Editor to store
   "version": "1.0",
   "id": "storeData",
   "data": {
-    "version": "1.0" // required
-    ...
+    "version": "1.0"
   }
 }
 ```
@@ -142,12 +141,12 @@ The sdk.js contains a function to automatically adjust the component height to t
 
 ```json
 {
-	"version": "1.0",
-	"id": "resize",
-	"data": {
-		"height": "",
-		"width": ""
-	}
+  "version": "1.0",
+  "id": "resize",
+  "data": {
+    "height": "",
+    "width": ""
+  }
 }
 ```
 
