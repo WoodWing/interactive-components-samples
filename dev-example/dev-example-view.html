@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example to view an interactive component</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: inherit;
+        }
+        body {
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+
+            background-color: rgba(236, 151, 31, 0.1);
+            overflow: hidden; /* hide scrollbars when resizing. */
+        }
+    </style>
+    <script type="application/javascript" src="int-comp-sdk-v1.js"></script>
+    <script type="application/javascript" >
+
+        // Called when page is ready
+        function _onLoad() {
+            // Log communication messages for develop purposes.
+            IntCompSdk.logMessages(true);
+
+            // Start listening to messages from ContentStation
+            IntCompSdk.listen(_onMessage);
+
+            // Notify ContentStation this page is ready to receive data
+            IntCompSdk.readyForData();
+
+            // Let the SDK manage the height of the component in ContentStation editor.
+            IntCompSdk.autoHeight();
+        }
+
+        // Handle the messages from ContentStation
+        function _onMessage(message) {
+            switch (message.id) {
+                case 'useData':
+                    // Handle initial data or data change in ContentStation editor.
+                    _updateContent(message.data);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // Update the content in page
+        function _updateContent(content) {
+            // Put content in this page body
+            document.body.innerText = JSON.stringify(content, null, '․․');
+
+            // Ensure the correct height of the component in ContentStation editor.
+            IntCompSdk.fitHeight();
+        }
+    </script>
+</head>
+<body onload="_onLoad()">
+</body>
+</html>
