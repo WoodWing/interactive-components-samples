@@ -1,0 +1,18 @@
+/* Body component style */
+.body {
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.6;
+    color: #606060;
+    margin: 12px auto;
+
+    /*
+     * media query
+     * $screen-sm-max constant is defined in the global style file (_common.scss)
+     */
+    @media (max-width: $screen-sm-max) {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+}
