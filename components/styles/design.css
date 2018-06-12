@@ -1038,3 +1038,70 @@ blockquote {
 .twitter-timeline-rendered,
 .twitter-tweet-rendered {
   margin: 0 auto !important; }
+
+/* Interactive component style */
+.gmap {
+  border: 1px red;
+  margin: 12px auto;
+  position: relative;
+  clear: both; }
+  .gmap div {
+    position: relative;
+    overflow: hidden;
+    padding: 0; }
+    .gmap div iframe {
+      width: 100%;
+      height: 1em;
+      border: 0; }
+  .gmap._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .gmap._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  @media only screen and (max-width: 481px) {
+    .gmap._right, .gmap._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .gmap._right {
+      margin-left: 0; } }
+
+/* Interactive component style */
+.interactive-test {
+  margin: 12px auto;
+  position: relative;
+  clear: both; }
+  .interactive-test div {
+    position: relative;
+    overflow: hidden;
+    padding: 0; }
+    .interactive-test div iframe {
+      width: 100%;
+      height: 1em;
+      border: 0; }
+  .interactive-test._left {
+    float: left;
+    clear: left;
+    width: calc(41% - 15px);
+    margin-right: 15px;
+    z-index: 1; }
+  .interactive-test._right {
+    float: right;
+    clear: right;
+    width: calc(60% - 15px);
+    margin-left: 15px;
+    z-index: 1; }
+  @media only screen and (max-width: 481px) {
+    .interactive-test._right, .interactive-test._left {
+      float: none;
+      clear: both;
+      width: 100%; }
+    .interactive-test._right {
+      margin-left: 0; } }

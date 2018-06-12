@@ -6,6 +6,26 @@
 
     "components":[
         {
+            "name": "google-maps",
+            "icon": "icons/components/google-maps-icon.png",
+            "label": "Google Maps",
+            "selectionMethod":"handle",
+            "properties": [
+                "position",
+                "google-maps-props:gmap"
+            ]
+        },
+        {
+            "name": "interactive-test",
+            "icon": "icons/components/dev-example-icon.svg",
+            "label": "Test",
+            "selectionMethod":"handle",
+            "properties": [
+                "position",
+                "interactive-test-props:here"
+            ]
+        },
+        {
             "name": "body",
             "label": "{{ 'BODY_EDITOR_LABEL' | translate }}",
             "icon": "icons/components/body.svg",
@@ -263,10 +283,55 @@
             "components": [
                 "container"
             ]
+        },
+        {
+            "label":"Interactive",
+            "name":"interactive",
+            "components":[
+                "google-maps",
+                "interactive-test"
+            ]
         }
     ],
 
     "componentProperties": [
+        {
+            "name": "google-maps-props",
+            "label": "Edit map",
+            "control": {
+                "type": "interactive",
+                "defaultConfig": {
+                    "options": {
+                        "clickableIcons": true,
+                        "draggable": false,
+                        "fullscreenControl": false,
+                        "keyboardShortcuts": false,
+                        "mapTypeControl": false,
+                        "panControl": false,
+                        "rotateControl": false,
+                        "scaleControl": false,
+                        "scrollwheel": false,
+                        "streetViewControl": false,
+                        "zoomControl": false
+                    }
+                },
+                "viewLink": "http://localhost/Enterprise/cc/google-maps/google-maps-view.html",
+                "editLink": "http://localhost/Enterprise/cc/google-maps/google-maps-edit.html"
+            },
+            "dataType": "doc-interactive"
+        },
+        {
+            "name": "interactive-test-props",
+            "label": "Edit component config",
+            "control": {
+                "type": "interactive",
+                "defaultConfig": {
+                },
+                "viewLink": "http://localhost/Enterprise/cc/dev-example/dev-example-view.html",
+                "editLink": "http://localhost/Enterprise/cc/dev-example/dev-example-edit.html"
+            },
+            "dataType": "doc-interactive"
+        },
         {
             "name": "position",
             "label": "{{ 'DESIGN_PROPERTY_POSITION_LABEL' | translate }}",

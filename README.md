@@ -35,12 +35,12 @@ Once you have the API key you will have to add it to both the `google-maps-view.
 2. Go to the cloned directory
 3. Initialize the project
 
-		$> npm install
+		$ npm install
 
 4. Change the URL in the `viewLink` and `editLink` properties of the custom components in `componentDefinition.json` to point to the location where the uploaded interactive components are located. 
 5. Build the component set. Afterwards the `dist` folder will contain a zip file with the created component set.
 
-		$> npm run build
+		$ npm run build
 
 Check out the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate) for more information about creating component sets.
 
@@ -157,20 +157,20 @@ Due to GitHub limitations this project has not been forked from the [boilerplate
 	
 1. Create and switch to a new branch
 
-		$> git checkout -b <yourbranch> 
+		$ git checkout -b <yourbranch> 
 
 2. Add the boilerplate as remote
 
-		$> git remote add upstream https://github.com/WoodWing/csde-components-boilerplate
+		$ git remote add upstream https://github.com/WoodWing/csde-components-boilerplate
 
 3. Pull in the latest changes from the boilerplate
 
-		$> git pull upstream master
+		$ git pull upstream master
 
 4. Resolve merge conflicts. In particular this `README.md` will result in conflicts. In most cases you want to ignore the changes to boilerplate's `README.md`.
 
 5. Push your changes to the remote
 
-		$> git push origin <yourbranch>
+		$ git push origin <yourbranch>
 
 6. Create a pull request
