@@ -155,18 +155,22 @@ By default the width of the page is 100% of the component width. The width is li
 
 Due to GitHub limitations this project has not been forked from the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate). Incorporating the latest changes from the boilerplate is therefore slightly more work.
 	
-1. Add the boilerplate as remote
+1. Create and switch to a new branch
+
+		$> git checkout -b <yourbranch> 
+
+2. Add the boilerplate as remote
 
 		$> git remote add upstream https://github.com/WoodWing/csde-components-boilerplate
 
-2. Pull in the latest changes from the boilerplate
+3. Pull in the latest changes from the boilerplate
 
-		$> git pull upstream <yourbranch>
+		$> git pull upstream master
 
-3. Resolve merge conflicts. In particular this `README.md` will result in conflicts. In most cases you want to ignore the changes to boilerplate's `README.md`.
+4. Resolve merge conflicts. In particular this `README.md` will result in conflicts. In most cases you want to ignore the changes to boilerplate's `README.md`.
 
-4. Push your changes to the remote
+5. Push your changes to the remote
 
 		$> git push origin <yourbranch>
 
-5. Create a pull request
+6. Create a pull request
