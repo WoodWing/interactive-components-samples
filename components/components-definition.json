@@ -315,8 +315,8 @@
                         "zoomControl": false
                     }
                 },
-                "viewLink": "http://localhost/Enterprise/cc/google-maps/google-maps-view.html",
-                "editLink": "http://localhost/Enterprise/cc/google-maps/google-maps-edit.html"
+                "viewLink": "INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-view.html",
+                "editLink": "INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-edit.html"
             },
             "dataType": "doc-interactive"
         },
@@ -327,8 +327,8 @@
                 "type": "interactive",
                 "defaultConfig": {
                 },
-                "viewLink": "http://localhost/Enterprise/cc/dev-example/dev-example-view.html",
-                "editLink": "http://localhost/Enterprise/cc/dev-example/dev-example-edit.html"
+                "viewLink": "INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-view.html",
+                "editLink": "INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-edit.html"
             },
             "dataType": "doc-interactive"
         },

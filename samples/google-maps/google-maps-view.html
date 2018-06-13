@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <style>
-      * {
-        margin: 0;
-        box-sizing: inherit;
-      }
-      body {
-        box-sizing: border-box;
-      }
-      #map {
-        height: 400px;
-        width: 100%;
-      }
+        * {
+            margin: 0;
+            box-sizing: inherit;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
     </style>
     <script type="application/javascript" src="../sdk/int-comp-sdk-v1.js"></script>
     <script>
@@ -34,6 +36,7 @@
             // Track window resize to keep the map center location in the middle
             window.addEventListener('resize', _onResizeWindow);
         }
+
         // Handle message sent from ContentStation
         function _onMessage(message) {
             if (message.id === 'useData') {
@@ -42,12 +45,13 @@
                 IntCompSdk.fitHeight();
             }
         }
+
         // Create/update the map.
-        function _updateMap (data) {
+        function _updateMap(data) {
             // The map options.
             var options = data && data.options || {};
             options.mapTypeId = options.mapTypeId || 'roadmap';
-            options.center = _importLocation(options.center) || { lat: 52.37021437560262, lng: 4.983500164788777 };
+            options.center = _importLocation(options.center) || {lat: 52.37021437560262, lng: 4.983500164788777};
             options.zoom = Number(options.zoom || 7);
 
             // Create new map using first marker as center location and zoom
@@ -55,7 +59,7 @@
 
             // Track center location to keep it in the middle when resizing.
             _currCenter = _exportLocation(_currMap.getCenter());
-            _currMap.addListener('center_changed', function() {
+            _currMap.addListener('center_changed', function () {
                 if (!_skipCenter) {
                     _currCenter = _exportLocation(_currMap.getCenter());
                 } // else center was correct due resize, no need to track that.
@@ -64,14 +68,15 @@
 
             // Add markers to map
             var markers = data && data.markers || [];
-            markers.forEach(function(marker) {
+            markers.forEach(function (marker) {
                 var m = _importMarker(marker);
                 m.map = _currMap;
                 new google.maps.Marker(m);
             });
         }
+
         function _onResizeWindow() {
-            setTimeout(function() {
+            setTimeout(function () {
                 _skipCenter = true;
                 _currMap.setCenter(_currCenter);
                 _skipCenter = true;
@@ -81,8 +86,9 @@
         function _importLocation(location) {
             return location && {lat: Number(location.lat), lng: Number(location.lng)};
         }
+
         function _importMarker(marker) {
-            var result = { position: _importLocation(marker.position) };
+            var result = {position: _importLocation(marker.position)};
             if (marker.title) {
                 result.title = marker.title;
                 result.icon = {
@@ -97,6 +103,7 @@
             }
             return result;
         }
+
         function _importIcon(icon) {
             return {
                 url: icon.url,
@@ -106,6 +113,7 @@
                 scaledSize: new google.maps.Size(25, 25)
             };
         }
+
         function _exportLocation(location) {
             return {
                 lat: location.lat(),
@@ -114,9 +122,9 @@
         }
 
     </script>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=_onLoad"></script>
-  </body>
+</head>
+<body>
+<div id="map"></div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=_onLoad"></script>
+</body>
 </html>

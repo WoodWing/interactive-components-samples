@@ -8,25 +8,30 @@
             margin: 0;
             box-sizing: inherit;
         }
+
         body {
             box-sizing: border-box;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 14px;
         }
+
         #header {
             height: 50px;
             padding: 15px 30px;
             font-style: italic;
             font-weight: 300;
         }
+
         #content {
             padding: 0 30px;
         }
+
         #content label {
             padding: 5px 0 2px;
             display: block;
             font-weight: 400;
         }
+
         #input {
             display: block;
             resize: none;
@@ -39,15 +44,18 @@
             outline-color: #f9b659;
             font-size: 12px;
         }
+
         #input.invalid {
             border: 1px solid red;
             outline-color: red;
         }
+
         #output {
             overflow-y: auto;
             font-size: 12px;
         }
-        #output div{
+
+        #output div {
             margin-bottom: 2px;
             background-color: whitesmoke;
             border-radius: 8px;
@@ -59,6 +67,7 @@
             padding: 12px 30px;
             border-top: 1px solid whitesmoke;
         }
+
         #footer button {
             margin-left: 10px;
             padding: 3px 20px;
@@ -69,14 +78,17 @@
             outline-color: #f9b659;
             cursor: pointer;
         }
+
         #footer button.right {
             float: right;
         }
+
         #footer button.submit {
             color: black;
             background-color: #f9b659;
             border: 1px solid #f9b659;
         }
+
         #footer button.submit:disabled {
             color: silver;
             background-color: white;
@@ -107,7 +119,7 @@
             // Make edit dialog wider
             IntCompSdk.postMessage({
                 id: 'resize',
-                data: { width: '500px' },
+                data: {width: '500px'},
                 version: "1.0"
             });
 
@@ -138,7 +150,7 @@
                     JSON.parse(text);
                     ok = true;
                 }
-            } catch(e) {
+            } catch (e) {
             }
             document.querySelector('.submit').disabled = !ok;
             document.getElementById('input').className = ok ? '' : 'invalid';
@@ -193,10 +205,10 @@
                         something: 'else'
                     },
                     list: [
-                        { id: '15435345', value: '1' },
-                        { id: '23423234', value: '2' },
-                        { id: '34994756', value: '3' },
-                        { id: '97097606', value: '4' }
+                        {id: '15435345', value: '1'},
+                        {id: '23423234', value: '2'},
+                        {id: '34994756', value: '3'},
+                        {id: '97097606', value: '4'}
                     ]
                 },
                 version: '1.0'
@@ -213,17 +225,17 @@
     </script>
 </head>
 <body onload="_onLoad()">
-    <div id="header">Example of editing an interactive component.</div>
-    <div id="content">
-        <label>Json data:</label>
-        <textarea id="input" placeholder="Please enter json text data here"></textarea>
-    </div>
-    <div id="footer">
-        <button onclick="submitA()" title="Submit sample A">A</button>
-        <button onclick="submitB()" title="Submit sample B">B</button>
-        <button onclick="submitC()" title="Submit sample C">C</button>
-        <button class="right submit" onclick="submit()" title="Submit json data">OK</button>
-        <button class="right" onclick="dismiss()">Cancel</button>
-    </div>
+<div id="header">Example of editing an interactive component.</div>
+<div id="content">
+    <label>Json data:</label>
+    <textarea id="input" placeholder="Please enter json text data here"></textarea>
+</div>
+<div id="footer">
+    <button onclick="submitA()" title="Submit sample A">A</button>
+    <button onclick="submitB()" title="Submit sample B">B</button>
+    <button onclick="submitC()" title="Submit sample C">C</button>
+    <button class="right submit" onclick="submit()" title="Submit json data">OK</button>
+    <button class="right" onclick="dismiss()">Cancel</button>
+</div>
 </body>
 </html>
