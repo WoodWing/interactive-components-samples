@@ -1039,7 +1039,7 @@ blockquote {
 .twitter-tweet-rendered {
   margin: 0 auto !important; }
 
-/* Interactive component style */
+/* Google Maps interactive component style */
 .gmap {
   border: 1px red;
   margin: 12px auto;
@@ -1073,7 +1073,7 @@ blockquote {
     .gmap._right {
       margin-left: 0; } }
 
-/* Interactive component style */
+/* Interactive test component style */
 .interactive-test {
   margin: 12px auto;
   position: relative;

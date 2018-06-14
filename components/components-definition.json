@@ -315,8 +315,8 @@
                         "zoomControl": false
                     }
                 },
-                "viewLink": "INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-view.html",
-                "editLink": "INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-edit.html"
+                "viewLink": "uri:INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-view.html",
+                "editLink": "uri:INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-edit.html"
             },
             "dataType": "doc-interactive"
         },
@@ -327,8 +327,8 @@
                 "type": "interactive",
                 "defaultConfig": {
                 },
-                "viewLink": "INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-view.html",
-                "editLink": "INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-edit.html"
+                "viewLink": "uri:INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-view.html",
+                "editLink": "uri:INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-edit.html"
             },
             "dataType": "doc-interactive"
         },
