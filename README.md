@@ -34,12 +34,12 @@ Once you have the API key you will have to add it to both the `google-maps-view.
 2. Go to the cloned directory
 3. Initialize the project
 
-		$> npm install
+		$ npm install
 
 4. Change the `INSERT_YOUR_BASE_URL_HERE` part of the URL in the `viewLink` and `editLink` properties of the components in `componentDefinition.json` to point to the location where the uploaded interactive content is located. 
 5. Build the component set. Afterwards the `dist` folder will contain a zip file with the created component set.
 
-		$> npm run build
+		$ npm run build
 
 Check out the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate) for more information about creating component sets.
 
