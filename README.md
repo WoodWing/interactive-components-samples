@@ -1,54 +1,55 @@
-# Interactive Components Samples
+# Samples of components with interactive content
 
 ## Introduction
 
-The Digital Editor allows users to create and add their own highly customizable components to a digital article.
+The Digital Editor allows users to create and add their own components with highly interactive content to a digital article.
 
-This repository contains steps on how to create and configure these components as well as example components that can be used inside an article.
+This repository contains steps on how to create and configure these components as well as two samples that can be used inside a digital article.
 
-### Info: This feature requires Content Station Aurora version 11.6 or higher
+### Important: This feature requires Content Station Aurora version 11.15 or higher
 
-## Configuration
+Check [here](tree/1.0) if you're using a Content Station Aurora version between 11.6 and 11.15 and want to use interactive components.
 
-Any interactive component first needs to be configured in the Content Station Management Console before it is shown in the Digital Editor.
+## Configuration and Usage
 
-### Content Station Management Console
+Configuring interactive components consists of two parts. The first is the **interactive content** itself which needs to be hosted on an accessible external web server. The second part is to create or extend a component set to include a **component** to make the interactive content available for use in the Digital Editor. This samples project is based on the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate) and extends it with two components.
 
-The Content Station Management Console has a separate page called Interactive Components in the sidebar.
-On this page new interactive components can be added globally or per Brand.
+### Upload sample interactive content
 
-For new components a number of options have to be configured:
+All files in the `samples` folder need to be copied to an accessible web server, preferably accessible through HTTPS. While copying, keep the folder structure the same, as all HTML files refer to the Javascript file through a relative link.
 
-- `Name`: This name is shown in the add dialog of the Digital Editor.
-- `Icon URL`: This icon will be shown in the add dialog of the Digital Editor as well.
-- `View URL`: The view HTML of the interactive component. This is the HTML that is shown inside an article as well as the HTML that is shown when the article is published.
-- `Edit URL`: The HTML used in the edit popover. This will load a component in which the user can modify the data.
-- `Show in Digital Editor`: An option to show or hide the component inside the add dialog of the Digital Editor.
-- `Description`: The description of the interactive component.
-- `Default JSON`: When provided this JSON is passed along to the popover the first time it is opened.
+> One of the reasons HTTPS is preferred over HTTP is that HTTP data cannot be loaded in a HTTPS page. This means that if the Digital Editor is running on HTTPS, components with interactive content accessed through HTTP will not work.
 
-#### Component Setup
+#### Google Maps sample
 
-As an example we can use the Google Maps component from this repository.
+One of the provided samples in this repository is the Google Maps component which requires additional configuration before copying.
 
-> The Google Maps component needs an API key from Google to function. Getting an API key is pretty straightforward and can be found here: https://developers.google.com/maps/documentation/javascript/get-api-key.
-Once you have the API key you will have to add it to both the google-maps-view.html and the google-maps-edit.html. Inside these files there is a `YOUR_KEY_HERE` part. This has to be replaced with the API key. After that the files should work as expected.
+> The Google Maps interactive content needs an API key from Google to function. Getting an API key is straightforward and instructions can be found on the [Google Maps JavaScript API
+](https://developers.google.com/maps/documentation/javascript/get-api-key) web page.
+Once you have the API key you will have to add it to both the `google-maps-view.html` and the `google-maps-edit.html` files. These files contain a placeholder `YOUR_KEY_HERE` which should be replaced with the API key. After replacing the key the files should work as expected.
 
-Both the google-maps-view.html and the google-maps-edit.html as well as the int-comp-sdk-v1.js have to be located on an accessible web server, preferable on https. The sdk.js has to be in the same location as the HTML files.
+### Building the component set
 
-> One of the reason HTTPS is prefered is because you cannot load HTTP data in a HTTPS page. Meaning if the Digital Editor is running in HTTPS, interactive components running on HTTP will not work.
+1. Install NodeJS 8 or higher
+2. Go to the cloned directory
+3. Initialize the project
 
-Once the steps above have been complete you can fill in the `View URL` and the `Edit URL` with the locations of the html files. Make sure it has a valid `Name` as well.
-After this the interactive component should be saved succesfully in the Management Console.
+		$> npm install
+
+4. Change the `INSERT_YOUR_BASE_URL_HERE` part of the URL in the `viewLink` and `editLink` properties of the components in `componentDefinition.json` to point to the location where the uploaded interactive content is located. 
+5. Build the component set. Afterwards the `dist` folder will contain a zip file with the created component set.
+
+		$> npm run build
+
+Check out the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate) for more information about creating component sets.
 
 #### Additional options for the Google Maps component
-It's possible to tweak the google maps controls by adjusting the `default JSON` of the component.
-By using this you could, for example, make the published map static or only hide the street-view toggle. 
+It's possible to tweak the Google Maps controls by adjusting the `defaultConfig` property of the component in `componentDefinition.json`. By using this you could, for example, make the published map static or hide the Street View toggle. 
 
-> These options are documented in: https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapOptions 
+> The options are documented in: [MapOptions API](https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapOptions) 
 
-You can only add them in the `default JSON` of the interactive component inside the Management Console.
-An example default JSON could be: 
+This is an example configuration for the `defaultConfig` property: 
+
 ```json
 { 
     "version": "1.0",
@@ -68,31 +69,27 @@ An example default JSON could be:
 } 
 ```
 
-#### Deleting components
 
-If an interactive component is deleted in the Management Console, this component will no longer be visible inside an article. In stead of the component, an error screen will be shown.
+### Upload the component set and configure Enterprise Server
 
-To prevent this behavior, it's better to disable the component first. This can be done by turning off the option `Show in Digital Editor`. 
+To make the components available for use in the Digital Editor, the component set needs to be uploaded and bound to a digital article template. See the [article](--INSERT--) on Helpcenter for information about managing and using component sets. 
 
-When it's clear the component is not used anymore it can be safely deleted.
+### Using the interactive components in the Digital Editor
 
-### Digital Editor
+Once the configuration steps are complete, create a new digital article from the digital article template bound to the component set with the new components.
 
-Once the Management Console steps are complete, create a new digital article in the Brand that has the interactive component configured. (Or any Brand if the component was added to the Global list).
-
-After the article is created open the add component dialog by hitting the + icon between components. This dialog has a new tab called **Interactive**. Inside this tab all the components that are configured for this article will be listed. You can now add the Google Maps component to the article.
+After the article is created, open the component picker by hitting the + icon between components. This dialog has an extra tab called **Interactive**. Inside this tab the two added components are listed. You can now add the Google Maps component to the article.
 
 ## Communication API
 
-Both the view and edit HTML files can communicate with the Digital Editor via a postMessage API.
-The current version of the API supports 4 messages.
+Both the view and edit HTML files that are part of the interactive content can communicate with the Digital Editor via the postMessage API. The current version of the API supports 4 messages.
 
-The sdk.js that is provided together with the interactive components initializes a global object called `IntCompSdk`. This global object offers several functions that ease the communication with the Digital Editor. See the google-maps files for examples.
+The `sdk.js` that is provided together with the interactive content initializes a global object called `IntCompSdk`. This global object offers several functions that ease the communication with the Digital Editor. See the [google-maps](samples/google-maps) files for examples.
 
-### readyForData
+### `readyForData` message
 
-This message is sent by the interactive component to the Digital Editor to indicate that its initial booting is completed and it's ready to receive data related to the component.
-The sdk.js offers the function `IntCompSdk.readyForData()` for this message.
+This message is sent by the interactive content to the Digital Editor to indicate that its initial booting is completed and it's ready to receive data related to the component.
+The `sdk.js` offers the function `IntCompSdk.readyForData()` for this message.
 
 ```json
 {
@@ -101,8 +98,8 @@ The sdk.js offers the function `IntCompSdk.readyForData()` for this message.
 }
 ```
 
-### useData
-This message is sent by the Digital Editor to the interactive component. It contains the data associated with the instance of the component as it was previously stored in the article via the storeData message.
+### `useData` message
+This message is sent by the Digital Editor to the interactive content. It contains the data associated with the instance of the component as it was previously stored in the article via the storeData message.
 
 ```json
 {
@@ -114,9 +111,9 @@ This message is sent by the Digital Editor to the interactive component. It cont
 }
 ```
 
-### storeData
+### `storeData` message
 
-This message is sent by the interactive component to the Digital Editor to store data associated with the instance of the interactive component. In our Google Maps component this data can consist of marker and zoom information.
+This message is sent by the interactive content to the Digital Editor to store data associated with the instance of the component. In the Google Maps component this data can consist of marker and zoom information.
 
 ```json
 {
@@ -128,16 +125,18 @@ This message is sent by the interactive component to the Digital Editor to store
 }
 ```
 
-### resize
+### `resize` message
 
-This message is sent by the interactive component to the Digital Editor to initiate a resize. It will adjust the width and/or height of the container in which the interactive component is loaded to fit this page. The container can be an interactive component in the Digital Editor or in the edit popup. In case of the edit popup, it will adjust the dialog size in which the edit HTML is visible. 
+This message is sent by the interactive content to the Digital Editor to initiate a resize. It will adjust the width and/or height of the container in which the interactive content is loaded to fit its dimensions. The container can be a component in the Digital Editor or an element in the edit pop-up. In case of the edit pop-up, it will adjust the dialog size in which the edit HTML is visible. 
 
 The width and height should be in pixels or percentages and both are optional. 
-> I.e. { "width": "100%", "height": "50px" } or { "width": "400px" }
 
-By default the width of the page is 100% of the component width. The width is limited by the article or edit dialog width.
-The component height is by default 1em and should, in most cases, be adjusted. This can be done by setting a fixed height as done in the Google Maps view sample.
-The sdk.js contains a function to automatically adjust the component height to the page body height. This can be done by calling `IntCompSdk.autoHeight()` once. See the dev-example-view.html page.
+	{ "width": "100%", "height": "50px" }
+or
+
+	{ "width": "400px" }
+
+By default the width of the page is 100% of the container width. The width is limited by the article or edit dialog width. The container height is by default 1em and should, in most cases, be adjusted. This can be done by setting a fixed height as done in the Google Maps view sample. The `sdk.js` contains a function to automatically adjust the container height to the interactive content height. This can be done by calling `IntCompSdk.autoHeight()` once. See the [dev-example-view.html](samples/dev-example/dev-example-view.html) file for an example how to do this.
 
 ```json
 {
@@ -149,5 +148,3 @@ The sdk.js contains a function to automatically adjust the component height to t
   }
 }
 ```
-
-
