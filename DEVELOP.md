@@ -14,7 +14,7 @@ Due to GitHub limitations this project has not been forked from the [boilerplate
 
 3. Pull in the latest changes from the boilerplate.
 
-		$> git pull upstream master
+		$> git pull upstream master --no-ff
 
 4. Resolve merge conflicts. In particular this `README.md` will result in conflicts. In most cases you want to ignore the changes to boilerplate's `README.md`.
 

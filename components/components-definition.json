@@ -12,7 +12,7 @@
             "selectionMethod":"handle",
             "properties": [
                 "position",
-                "google-maps-props:gmap"
+                { "name": "google-maps-props", "directiveKey": "gmap" }
             ]
         },
         {
@@ -22,7 +22,7 @@
             "selectionMethod":"handle",
             "properties": [
                 "position",
-                "interactive-test-props:here"
+                { "name": "interactive-test-props", "directiveKey": "here" }
             ]
         },
         {
