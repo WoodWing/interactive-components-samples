@@ -4,12 +4,13 @@ Component properties are displayed in the side bar when a component is selected.
 
 The general definition of a property looks like:
 
-```
+```javascript
 {
     // Property identifier.
     "name": "property",
 
-    // Name displayed for property in side bar.
+    // Name displayed for property in side bar. See LOCALIZATION.md for information on
+    // localization of options
     "label": "Property Name",
 
     // Type of UI control element.
@@ -21,10 +22,18 @@ The general definition of a property looks like:
     // When stored as "styles", the property value is added as css class to the main element.
     // When stored as "inlineStyles", the property value is directly used as inline style.
     // When stored as 'data", the property is free data.
-    // When stored as a directive (for example, doc-media), the property can be used to modify content data of a directive.
+    // When stored as a directive (for example, doc-media), the property can be used to modify
+    // content data of a directive.
     "dataType": "styles" | "inlineStyles" | "data" | "<directive>:<content-key>",
 
-    // Optional css selector key, it may be used if property should be applied to some nested html element instead of main component element.
+    // Default value upon component creation.
+    // Can only be used with data types "styles", "inlineStyles" and "data".
+    // Only supports the control types "text", "select", "radio" and "checkbox".
+    // The value must match the available values in the control types.
+    "defaultValue": "value",
+
+    // Optional css selector key, it may be used if property should be applied to some nested
+    // html element instead of main component element.
     "selector": "css-selector",
 
     // Name of Enterprise Feature flag that should be present for the property to show up.
@@ -58,11 +67,12 @@ Stores directive data as part of the content object of the component.
 
 ### `select`
 
-Dropdown with options. Each option has a value that's applied
+Dropdown with options (see [Localization](LOCALIZATION.md) for information on localization of the caption). Each option has a value that's applied
 to the `dataType`. One option must have an empty value, which is the default value.
 
-Example of `select` control:
-```
+Example of the `select` control type:
+
+```json
     "control" {
         "type": "select",
         "options": [
@@ -85,9 +95,9 @@ Example of `select` control:
 
 Toggle between applying a value. Defaults to not having a value.
 
-Example of `checkbox` control:
+Example of the `checkbox` control type:
 
-```
+```json
     "control": {
         "type": "checkbox",
         "value": "_value"
@@ -98,8 +108,9 @@ Example of `checkbox` control:
 
 Adds radio buttons with options. One option must have an empty value, which is the default value. The radio buttons can be customized with icons.
 
-Example of `radio` control:
-```
+Example of the `radio` control type:
+
+```json
     "control": {
         "type": "radio",
         "options": [
@@ -125,9 +136,9 @@ Example of `radio` control:
 
 Allows text input from user. Regular expressions can be defined to restrict input.
 
-Example of `text` control:
+Example of the `text` control type:
 
-```
+```json
     "control": {
         "type": "text",
         "pattern": "^.*$",
@@ -168,3 +179,22 @@ Similar to `checkbox` control type, but is disabled when the component has doc-l
 Enables the fitting option for doc-image directives in the component. These are pre-configured options that change the behavior of an image using inline-styling. Only works for images that use `background-image`.
 
 Can only be used with doc-image directives and requires specifying the directive content key in the component properties list separated by a colon.
+
+
+### `slides`
+
+Enables slides section and can only be used together with `dataType=doc-slideshow`. The slides section allows the user to reorder
+slides, as well as change properties of the selected slide.
+
+By default it shows all properties of the active slide component, but it can be filtered down by using the `include` and `exclude` attributes, which are defined as arrays with the names of properties to include or exclude.
+
+Example of the `slides` control type:
+
+```json
+    "control": {
+        "type": "slides",
+        "include": [
+            "edit-image"
+        ]
+    }
+```

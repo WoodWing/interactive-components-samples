@@ -27,7 +27,7 @@
         },
         {
             "name": "body",
-            "label": "{{ 'BODY_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_BODY_LABEL" },
             "icon": "icons/components/body.svg",
             "properties":[
                 "drop-capital",
@@ -43,7 +43,7 @@
             "icon": "icons/components/container.svg",
             "selectionMethod": "handle",
             "allowNesting": "one-level",
-            "label": "{{ 'DESIGN_COMPONENT_CONTAINER_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_CONTAINER_LABEL" },
             "properties": [
                 "style",
                 "position",
@@ -53,7 +53,7 @@
         {
             "name": "product",
             "icon": "icons/components/product.svg",
-            "label": "{{ 'DESIGN_COMPONENT_PRODUCT_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_PRODUCT_LABEL" },
             "properties": [
                 "position",
                 "style",
@@ -65,7 +65,7 @@
         {
             "name": "image",
             "icon": "icons/components/image.svg",
-            "label": "{{ 'IMAGE_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_IMAGE_LABEL" },
             "properties": [
                 "fitting",
                 "position",
@@ -75,25 +75,27 @@
                 "text-align",
                 "letter-spacing",
                 "line-height",
-                { "name": "edit-image", "directiveKey": "image" }
+                { "name": "edit-image", "directiveKey": "image" },
+                { "name": "hyperlink", "directiveKey": "hyperlink" }
             ]
         },
         {
             "name": "embed",
             "icon": "icons/components/embed.svg",
             "selectionMethod": "handle",
-            "label": "{{ 'DESIGN_COMPONENT_EMBED_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_EMBED_LABEL" },
             "properties": [
-                "style"
+                "style",
+                { "name": "embed-code", "directiveKey": "html" }
             ]
         },
         {
             "name": "slideshow",
             "icon": "icons/components/slideshow.svg",
-            "label": "{{ 'DESIGN_COMPONENT_SLIDESHOW_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_SLIDESHOW_LABEL" },
             "properties": [
                 { "name": "slides", "directiveKey": "slideshow" },
-                { "control": { "type": "header" }, "label": "Slideshow properties" },
+                { "control": { "type": "header" }, "label": { "key": "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL" } },
                 "fitting",
                 "slideshow-inside-caption",
                 "slideshow-play-orientation",
@@ -112,18 +114,19 @@
         {
             "name": "author",
             "icon": "icons/components/author.svg",
-            "label": "{{ 'DESIGN_COMPONENT_AUTHOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_AUTHOR_LABEL" },
             "properties": [
                 "style",
                 "text-align",
                 "letter-spacing",
-                "line-height"
+                "line-height",
+                { "name": "hyperlink", "directiveKey": "link-url" }
             ]
         },
         {
             "name": "crosshead",
             "icon": "icons/components/crosshead.svg",
-            "label": "{{ 'CROSS_HEAD_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_CROSSHEAD_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -134,7 +137,7 @@
         {
             "name": "footer",
             "icon": "icons/components/footer.svg",
-            "label": "{{ 'FOOTER_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_FOOTER_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -145,7 +148,7 @@
         {
             "name": "intro",
             "icon": "icons/components/intro.svg",
-            "label": "{{ 'INTRO_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_INTRO_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -156,7 +159,7 @@
         {
             "name": "quote",
             "icon": "icons/components/quote.svg",
-            "label": "{{ 'DESIGN_COMPONENT_QUOTE_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_QUOTE_LABEL" },
             "properties": [
                 "position",
                 "style",
@@ -168,7 +171,7 @@
         {
             "name": "headline",
             "icon": "icons/components/headline.svg",
-            "label": "{{ 'DESIGN_COMPONENT_HEADLINE_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_HEADLINE_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -179,7 +182,7 @@
         {
             "name": "separator",
             "icon": "icons/components/separator.svg",
-            "label": "{{ 'DESIGN_COMPONENT_SEPARATOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_SEPARATOR_LABEL" },
             "properties": [
                 "style"
             ]
@@ -187,12 +190,12 @@
         {
             "name": "hero",
             "icon": "icons/components/hero.svg",
-            "label": "{{ 'HERO_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_HERO_LABEL" },
             "allowNesting": "no",
             "properties": [
                 "fixed-background",
                 "style",
-                "text-align",
+                { "name": "text-align", "defaultValue": "_align-middle" },
                 "letter-spacing",
                 "line-height",
                 { "name": "edit-image", "directiveKey": "image" }
@@ -201,7 +204,7 @@
         {
             "name": "subtitle",
             "icon": "icons/components/subtitle.svg",
-            "label": "{{ 'SUB_TITLE_EDITOR_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_SUBTITLE_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -212,7 +215,7 @@
         {
             "name": "title",
             "icon": "icons/components/title.svg",
-            "label": "{{ 'STORIES_TITLE_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_TITLE_LABEL" },
             "properties": [
                 "style",
                 "text-align",
@@ -223,7 +226,7 @@
         {
             "name": "social-media",
             "icon": "icons/components/social-media.svg",
-            "label": "{{ 'DESIGN_COMPONENT_SOCIAL_MEDIA_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_SOCIAL_MEDIA_LABEL" },
             "selectionMethod": "handle",
             "properties": [
                 { "name": "social-media-properties", "directiveKey": "media" },
@@ -234,7 +237,7 @@
         {
             "name": "video",
             "icon": "icons/components/video.svg",
-            "label": "{{ 'DESIGN_COMPONENT_VIDEO_LABEL' | translate }}",
+            "label": { "key": "COMPONENT_VIDEO_LABEL" },
             "selectionMethod": "handle",
             "properties": [
                 { "name": "video-properties", "directiveKey": "media" },
@@ -245,7 +248,7 @@
 
     "groups": [
         {
-            "label": "{{ \"STORIES_TITLE_LABEL\" | translate }}",
+            "label": { "key": "GROUP_TITLE_LABEL" },
             "name": "title",
             "components": [
                 "title",
@@ -255,7 +258,7 @@
             ]
         },
         {
-            "label": "{{ \"DESIGN_GROUP_TEXT_LABEL\" | translate }}",
+            "label": { "key": "GROUP_TEXT_LABEL" },
             "name": "text",
             "components": [
                 "intro",
@@ -268,7 +271,7 @@
             ]
         },
         {
-            "label": "{{ \"DESIGN_GROUP_MEDIA_LABEL\" | translate }}",
+            "label": { "key": "GROUP_MEDIA_LABEL" },
             "name": "media",
             "components": [
                 "slideshow",
@@ -280,7 +283,7 @@
             ]
         },
         {
-            "label": "{{ \"DESIGN_GROUP_LAYOUT_LABEL\" | translate }}",
+            "label": { "key": "GROUP_LAYOUT_LABEL" },
             "name": "layout",
             "components": [
                 "container"
@@ -336,19 +339,19 @@
         },
         {
             "name": "position",
-            "label": "{{ 'DESIGN_PROPERTY_POSITION_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_POSITION_LABEL" },
             "control": {
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}"
+                        "caption": { "key": "PROPERTY_POSITION_MIDDLE_OPTION" }
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "caption": { "key": "PROPERTY_POSITION_LEFT_OPTION" },
                         "value": "_left"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "caption": { "key": "PROPERTY_POSITION_RIGHT_OPTION" },
                         "value": "_right"
                     }
                 ]
@@ -357,13 +360,13 @@
         },
         {
             "name": "letter-spacing",
-            "label": "{{ 'DESIGN_PROPERTY_LETTER_SPACING' | translate }}",
+            "label": { "key": "PROPERTY_LETTER_SPACING_LABEL" },
             "control": {
                 "type": "text",
                 "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
                 "defaultValue": "",
                 "unit": "em",
-                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
+                "inputPlaceholder": { "key": "PROPERTY_AUTO_NUMBER_PLACEHOLDER" }
             },
             "selector": "[doc-editable]",
             "dataType": "inlineStyles",
@@ -371,13 +374,13 @@
         },
         {
             "name": "line-height",
-            "label": "{{ 'DESIGN_PROPERTY_LINE_HEIGHT' | translate }}",
+            "label": { "key": "PROPERTY_LINE_HEIGHT_LABEL" },
             "control": {
                 "type": "text",
                 "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
                 "defaultValue": "",
                 "unit": "em",
-                "inputPlaceholder": "DESIGN_PROPERTY_LETTER_SPACING_PLACEHOLDER"
+                "inputPlaceholder": { "key": "PROPERTY_AUTO_NUMBER_PLACEHOLDER" }
             },
             "selector": "[doc-editable]",
             "dataType": "inlineStyles",
@@ -385,39 +388,39 @@
         },
         {
             "name": "inside-caption",
-            "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_CAPTION_LABEL" },
             "control": {
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                        "caption": { "key": "PROPERTY_CAPTION_OUTSIDE_OPTION" }
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_NONE_OPTION" },
                         "value": "_caption-none"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_OPTION" },
                         "value": "_caption-inside"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_OPTION" },
                         "value": "_caption-top"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_LEFT_OPTION" },
                         "value": "_caption-top-left"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_RIGHT_OPTION" },
                         "value": "_caption-top-right"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_LEFT_OPTION" },
                         "value": "_caption-bottom-left"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_RIGHT_OPTION" },
                         "value": "_caption-bottom-right"
                     }
                 ]
@@ -426,7 +429,7 @@
         },
         {
             "name": "fixed-background",
-            "label": "{{ 'DESIGN_PROPERTY_FIXED_BACKGROUND_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_FIXED_BACKGROUND_LABEL" },
             "control": {
                 "type": "checkbox",
                 "value": "_fixed-background"
@@ -435,7 +438,7 @@
         },
         {
             "name": "drop-capital",
-            "label": "{{ 'DESIGN_PROPERTY_DROP_LABEL_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_DROP_CAP_LABEL" },
             "control": {
                 "type": "drop-capital",
                 "charactersMinimum": 1,
@@ -450,21 +453,21 @@
         },
         {
             "name": "text-align",
-            "label": "{{ 'DESIGN_PROPERTY_TEXT_ALIGN' | translate }}",
+            "label": { "key": "PROPERTY_TEXT_ALIGN_LABEL" },
             "control": {
                 "type": "radio",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_LEFT_LABEL' | translate }}",
+                        "caption": { "key": "PROPERTY_POSITION_LEFT_OPTION" },
                         "icon": "icons/properties/text-align-left.svg"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_MIDDLE_LABEL' | translate }}",
+                        "caption": { "key": "PROPERTY_POSITION_MIDDLE_OPTION" },
                         "icon": "icons/properties/text-align-middle.svg",
                         "value": "_align-middle"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_POSITION_RIGHT_LABEL' | translate }}",
+                        "caption": { "key": "PROPERTY_POSITION_RIGHT_OPTION" },
                         "icon": "icons/properties/text-align-right.svg",
                         "value": "_align-right"
                     }
@@ -475,91 +478,91 @@
         },
         {
             "name": "style",
-            "label": "{{ 'DESIGN_PROPERTY_VARIANT_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_VARIANT_LABEL" },
             "control": {
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_STYLES_DEFAULT_LABEL' | translate }}"
+                        "caption": { "key": "PROPERTY_STYLE_DEFAULT_OPTION" }
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 1",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "1"} },
                         "value": "_option1"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 2",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "2"} },
                         "value": "_option2"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 3",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "3"} },
                         "value": "_option3"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 4",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "4"} },
                         "value": "_option4"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 5",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "5"} },
                         "value": "_option5"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 6",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "6"} },
                         "value": "_option6"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 7",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "7"} },
                         "value": "_option7"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 8",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "8"} },
                         "value": "_option8"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 9",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "9"} },
                         "value": "_option9"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 10",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "10"} },
                         "value": "_option10"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 11",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "11"} },
                         "value": "_option11"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 12",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "12"} },
                         "value": "_option12"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 13",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "13"} },
                         "value": "_option13"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 14",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "14"} },
                         "value": "_option14"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 15",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "15"} },
                         "value": "_option15"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 16",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "16"} },
                         "value": "_option16"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 17",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "17"} },
                         "value": "_option17"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 18",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "18"} },
                         "value": "_option18"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 19",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "19"} },
                         "value": "_option19"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_STYLE_OPTION_LABEL' | translate }} 20",
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "20"} },
                         "value": "_option20"
                     }
                 ]
@@ -568,7 +571,7 @@
         },
         {
             "name": "fitting",
-            "label": "{{ 'DESIGN_PROPERTY_FITTING_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_FITTING_LABEL" },
             "control": {
                 "type": "fitting"
             },
@@ -576,39 +579,39 @@
         },
         {
             "name": "slideshow-inside-caption",
-            "label": "{{ 'STORY_METADATA_FIELD_CAPTION_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_CAPTION_LABEL" },
             "control": {
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_OUTSIDE' | translate }}"
+                        "caption": { "key": "PROPERTY_CAPTION_OUTSIDE_OPTION" }
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_NONE' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_NONE_OPTION" },
                         "value": "_caption-none"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_OPTION" },
                         "value": "_caption-inside"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_OPTION" },
                         "value": "_caption-top"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_LEFT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_LEFT_OPTION" },
                         "value": "_caption-top-left"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_TOP_RIGHT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_RIGHT_OPTION" },
                         "value": "_caption-top-right"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_LEFT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_LEFT_OPTION" },
                         "value": "_caption-bottom-left"
                     },
                     {
-                        "caption": "{{ 'DESIGN_PROPERTY_CAPTION_BOTTOM_RIGHT' | translate }}",
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_RIGHT_OPTION" },
                         "value": "_caption-bottom-right"
                     }
                 ]
@@ -617,15 +620,15 @@
         },
         {
             "name": "slideshow-play-orientation",
-            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_PLAY_ORIENTATION_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_PLAY_ORIENTATION_LABEL"},
             "control": {
                 "type": "select",
                 "options": [
                     {
-                        "caption": "{{ 'BTN_PREVIEW_HORIZONTAL_LABEL' | translate }}"
+                        "caption": { "key": "PROPERTY_PLAY_ORIENTATION_HORIZONTAL_OPTION" }
                     },
                     {
-                        "caption": "{{ 'BTN_PREVIEW_VERTICAL_LABEL' | translate }}",
+                      "caption": { "key": "PROPERTY_PLAY_ORIENTATION_VERTICAL_OPTION" },
                         "value": "_vertical"
                     }
                 ]
@@ -634,7 +637,7 @@
         },
         {
             "name": "slideshow-autoplay",
-            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_AUTO_PLAY_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_AUTO_PLAY_LABEL" },
             "control": {
                 "type": "checkbox",
                 "value": "_auto-play"
@@ -643,7 +646,7 @@
         },
         {
             "name": "slideshow-filmstrip",
-            "label": "{{ 'DESIGN_PROPERTY_SLIDESHOW_FILMSTRIP_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_SHOW_FILMSTRIP_LABEL" },
             "control": {
                 "type": "checkbox",
                 "value": "_filmstrip"
@@ -652,7 +655,7 @@
         },
         {
             "name": "disable-fullscreen",
-            "label": "{{ 'DESIGN_PROPERTY_DISABLE_FULLSCREEN_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_DISABLE_FULLSCREEN_LABEL" },
             "control": {
                 "type": "disable-fullscreen-checkbox"
             },
@@ -660,7 +663,7 @@
         },
         {
             "name": "background-color",
-            "label": "{{ 'DESIGN_PROPERTY_BACKGROUND_COLOR_LABEL' | translate }}",
+            "label": { "key": "PROPERTY_BACKGROUND_COLOR_LABEL" },
             "control": {
                 "type": "colorPicker",
                 "opacity": true
@@ -669,7 +672,7 @@
         },
         {
             "name": "edit-image",
-            "label": "Edit image",
+            "label": { "key": "PROPERTY_EDIT_IMAGE_LABEL" },
             "control": {
                 "type": "image-editor",
                 "focuspoint": true
@@ -678,7 +681,7 @@
         },
         {
             "name": "social-media-properties",
-            "label": "Media Properties",
+            "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
             "control": {
                 "type": "media-properties",
                 "mediaType": "social"
@@ -687,7 +690,7 @@
         },
         {
             "name": "video-properties",
-            "label": "Media Properties",
+            "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
             "control": {
                 "type": "media-properties",
                 "mediaType": "video"
@@ -696,7 +699,7 @@
         },
         {
             "name": "slides",
-            "label": "Slides",
+            "label": { "key": "PROPERTY_SLIDES_LABEL" },
             "control": {
                 "type": "slides",
                 "include": [
@@ -704,6 +707,24 @@
                 ]
             },
             "dataType": "doc-slideshow"
+        },
+        {
+            "name": "embed-code",
+            "label": { "key": "PROPERTY_EMBED_CODE_LABEL" },
+            "control": {
+                "type": "textarea",
+                "inputPlaceholder": { "key": "PROPERTY_EMBED_CODE_PLACEHOLDER" }
+            },
+            "dataType": "doc-html"
+        },
+        {
+            "name": "hyperlink",
+            "label": { "key": "PROPERTY_HYPERLINK_LABEL" },
+            "control": {
+                "type": "url",
+                "inputPlaceholder": { "key": "PROPERTY_HYPERLINK_PLACEHOLDER" }
+            },
+            "dataType": "doc-link"
         }
     ],
 
