@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48.4 43" enable-background="new 0 0 48.4 43" xml:space="preserve">
+<g>
+	<path fill="#F9B659" d="M39.2,34.1H9c-0.6,0-1.1-0.5-1.1-1.1V9.2c0-0.6,0.5-1.1,1.1-1.1h30.1c0.6,0,1.1,0.5,1.1,1.1V33
+		C40.3,33.6,39.8,34.1,39.2,34.1z M10.2,31.8h27.9V10.3H10.2V31.8z"/>
+	<ellipse fill="#F9B659" cx="15.8" cy="15.9" rx="2.1" ry="2.2"/>
+	<path fill="#F9B659" d="M9.7,30.9c-0.3,0-0.6-0.1-0.8-0.3c-0.4-0.4-0.4-1.2,0-1.6l6.8-6.8c0.4-0.4,1-0.5,1.5-0.1l6.7,5l6.1-8.3
+		c0.4-0.5,1-0.6,1.5-0.3l7.8,5.2c0.5,0.3,0.7,1.1,0.3,1.6c-0.3,0.5-1.1,0.7-1.6,0.3l-6.9-4.6L25,29.3c-0.2,0.2-0.4,0.4-0.7,0.4
+		c-0.3,0-0.6,0-0.8-0.2l-6.9-5.1l-6.1,6.1C10.3,30.8,10,30.9,9.7,30.9z"/>
+	<rect x="0" y="0" fill="#C8C8C8" width="48.4" height="1.5"/>
+	<rect x="0" y="41.4" fill="#C8C8C8" width="48.4" height="1.5"/>
+</g>
+</svg>

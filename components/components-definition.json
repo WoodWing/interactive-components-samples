@@ -1,0 +1,925 @@
+{
+    "name": "default-components",
+    "description": "Content Station Digital Editor components",
+    "version": "1.0.0",
+    "defaultComponentOnEnter": "body",
+
+    "components":[
+        {
+            "name": "google-maps",
+            "icon": "icons/components/google-maps-icon.png",
+            "label": "Google Maps",
+            "selectionMethod":"handle",
+            "properties": [
+                "position",
+                { "name": "google-maps-props", "directiveKey": "gmap" }
+            ]
+        },
+        {
+            "name": "interactive-test",
+            "icon": "icons/components/dev-example-icon.svg",
+            "label": "Test",
+            "selectionMethod":"handle",
+            "properties": [
+                "position",
+                { "name": "interactive-test-props", "directiveKey": "here" }
+            ]
+        },
+        {
+            "name": "body",
+            "label": { "key": "COMPONENT_BODY_LABEL" },
+            "icon": "icons/components/body.svg",
+            "properties":[
+                "drop-capital",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ],
+            "countStatistics": true
+        },
+        {
+            "name": "container",
+            "icon": "icons/components/container.svg",
+            "selectionMethod": "handle",
+            "allowNesting": "one-level",
+            "label": { "key": "COMPONENT_CONTAINER_LABEL" },
+            "properties": [
+                "style",
+                "position",
+                "background-color"
+            ]
+        },
+        {
+            "name": "product",
+            "icon": "icons/components/product.svg",
+            "label": { "key": "COMPONENT_PRODUCT_LABEL" },
+            "properties": [
+                "position",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "image",
+            "icon": "icons/components/image.svg",
+            "label": { "key": "COMPONENT_IMAGE_LABEL" },
+            "properties": [
+                "fitting",
+                "position",
+                "style",
+                "inside-caption",
+                "disable-fullscreen",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                { "name": "edit-image", "directiveKey": "image" },
+                { "name": "hyperlink", "directiveKey": "hyperlink" }
+            ]
+        },
+        {
+            "name": "embed",
+            "icon": "icons/components/embed.svg",
+            "selectionMethod": "handle",
+            "label": { "key": "COMPONENT_EMBED_LABEL" },
+            "properties": [
+                "style",
+                { "name": "embed-code", "directiveKey": "html" }
+            ]
+        },
+        {
+            "name": "slideshow",
+            "icon": "icons/components/slideshow.svg",
+            "label": { "key": "COMPONENT_SLIDESHOW_LABEL" },
+            "properties": [
+                { "name": "slides", "directiveKey": "slideshow" },
+                { "control": { "type": "header" }, "label": { "key": "COMPONENT_SLIDESHOW_PROPERTIES_HEADER_LABEL" } },
+                "fitting",
+                "slideshow-inside-caption",
+                "slideshow-play-orientation",
+                "slideshow-autoplay",
+                "slideshow-filmstrip",
+                "disable-fullscreen",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ],
+            "restrictChildren": {
+                "image": { "withContent": "image" }
+            }
+        },
+        {
+            "name": "author",
+            "icon": "icons/components/author.svg",
+            "label": { "key": "COMPONENT_AUTHOR_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height",
+                { "name": "hyperlink", "directiveKey": "link-url" }
+            ]
+        },
+        {
+            "name": "crosshead",
+            "icon": "icons/components/crosshead.svg",
+            "label": { "key": "COMPONENT_CROSSHEAD_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "footer",
+            "icon": "icons/components/footer.svg",
+            "label": { "key": "COMPONENT_FOOTER_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "intro",
+            "icon": "icons/components/intro.svg",
+            "label": { "key": "COMPONENT_INTRO_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "quote",
+            "icon": "icons/components/quote.svg",
+            "label": { "key": "COMPONENT_QUOTE_LABEL" },
+            "properties": [
+                "position",
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "headline",
+            "icon": "icons/components/headline.svg",
+            "label": { "key": "COMPONENT_HEADLINE_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "separator",
+            "icon": "icons/components/separator.svg",
+            "label": { "key": "COMPONENT_SEPARATOR_LABEL" },
+            "properties": [
+                "style"
+            ]
+        },
+        {
+            "name": "hero",
+            "icon": "icons/components/hero.svg",
+            "label": { "key": "COMPONENT_HERO_LABEL" },
+            "allowNesting": "no",
+            "properties": [
+                "fixed-background",
+                "style",
+                { "name": "text-align", "defaultValue": "_align-middle" },
+                "letter-spacing",
+                "line-height",
+                { "name": "edit-image", "directiveKey": "image" }
+            ]
+        },
+        {
+            "name": "subtitle",
+            "icon": "icons/components/subtitle.svg",
+            "label": { "key": "COMPONENT_SUBTITLE_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "title",
+            "icon": "icons/components/title.svg",
+            "label": { "key": "COMPONENT_TITLE_LABEL" },
+            "properties": [
+                "style",
+                "text-align",
+                "letter-spacing",
+                "line-height"
+            ]
+        },
+        {
+            "name": "social-media",
+            "icon": "icons/components/social-media.svg",
+            "label": { "key": "COMPONENT_SOCIAL_MEDIA_LABEL" },
+            "selectionMethod": "handle",
+            "properties": [
+                { "name": "social-media-properties", "directiveKey": "media" },
+                "position",
+                "style"
+            ]
+        },
+        {
+            "name": "video",
+            "icon": "icons/components/video.svg",
+            "label": { "key": "COMPONENT_VIDEO_LABEL" },
+            "selectionMethod": "handle",
+            "properties": [
+                { "name": "video-properties", "directiveKey": "media" },
+                "style"
+            ]
+        }
+    ],
+
+    "groups": [
+        {
+            "label": { "key": "GROUP_TITLE_LABEL" },
+            "name": "title",
+            "components": [
+                "title",
+                "subtitle",
+                "headline",
+                "hero"
+            ]
+        },
+        {
+            "label": { "key": "GROUP_TEXT_LABEL" },
+            "name": "text",
+            "components": [
+                "intro",
+                "body",
+                "footer",
+                "quote",
+                "separator",
+                "crosshead",
+                "author"
+            ]
+        },
+        {
+            "label": { "key": "GROUP_MEDIA_LABEL" },
+            "name": "media",
+            "components": [
+                "slideshow",
+                "image",
+                "embed",
+                "product",
+                "social-media",
+                "video"
+            ]
+        },
+        {
+            "label": { "key": "GROUP_LAYOUT_LABEL" },
+            "name": "layout",
+            "components": [
+                "container"
+            ]
+        },
+        {
+            "label":"Interactive",
+            "name":"interactive",
+            "components":[
+                "google-maps",
+                "interactive-test"
+            ]
+        }
+    ],
+
+    "componentProperties": [
+        {
+            "name": "google-maps-props",
+            "label": "Edit map",
+            "control": {
+                "type": "interactive",
+                "defaultConfig": {
+                    "options": {
+                        "clickableIcons": true,
+                        "draggable": false,
+                        "fullscreenControl": false,
+                        "keyboardShortcuts": false,
+                        "mapTypeControl": false,
+                        "panControl": false,
+                        "rotateControl": false,
+                        "scaleControl": false,
+                        "scrollwheel": false,
+                        "streetViewControl": false,
+                        "zoomControl": false
+                    }
+                },
+                "viewLink": "uri:INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-view.html",
+                "editLink": "uri:INSERT_YOUR_BASE_URL_HERE/google-maps/google-maps-edit.html"
+            },
+            "dataType": "doc-interactive"
+        },
+        {
+            "name": "interactive-test-props",
+            "label": "Edit component config",
+            "control": {
+                "type": "interactive",
+                "defaultConfig": {
+                },
+                "viewLink": "uri:INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-view.html",
+                "editLink": "uri:INSERT_YOUR_BASE_URL_HERE/dev-example/dev-example-edit.html"
+            },
+            "dataType": "doc-interactive"
+        },
+        {
+            "name": "position",
+            "label": { "key": "PROPERTY_POSITION_LABEL" },
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_MIDDLE_OPTION" }
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_LEFT_OPTION" },
+                        "value": "_left"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_RIGHT_OPTION" },
+                        "value": "_right"
+                    }
+                ]
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "letter-spacing",
+            "label": { "key": "PROPERTY_LETTER_SPACING_LABEL" },
+            "control": {
+                "type": "text",
+                "pattern": "^(([+-]{0,1})([0-9]|[0-9][.][0-9]{1,}|[0-9]{2}|[0-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+                "defaultValue": "",
+                "unit": "em",
+                "inputPlaceholder": { "key": "PROPERTY_AUTO_NUMBER_PLACEHOLDER" }
+            },
+            "selector": "[doc-editable]",
+            "dataType": "inlineStyles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
+        },
+        {
+            "name": "line-height",
+            "label": { "key": "PROPERTY_LINE_HEIGHT_LABEL" },
+            "control": {
+                "type": "text",
+                "pattern": "^(([+]{0,1})([0-9]|[0-9][.][0-9]{1,}|[1-9]{2}|[1-9]{2}[.][0-9]{1,}|[1-4][0-9]{0,2}|[1-4][0-9]{0,2}[.][0-9]{1,}|(500))|auto)$",
+                "defaultValue": "",
+                "unit": "em",
+                "inputPlaceholder": { "key": "PROPERTY_AUTO_NUMBER_PLACEHOLDER" }
+            },
+            "selector": "[doc-editable]",
+            "dataType": "inlineStyles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
+        },
+        {
+            "name": "inside-caption",
+            "label": { "key": "PROPERTY_CAPTION_LABEL" },
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_OUTSIDE_OPTION" }
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_NONE_OPTION" },
+                        "value": "_caption-none"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_OPTION" },
+                        "value": "_caption-inside"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_OPTION" },
+                        "value": "_caption-top"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_LEFT_OPTION" },
+                        "value": "_caption-top-left"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_RIGHT_OPTION" },
+                        "value": "_caption-top-right"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_LEFT_OPTION" },
+                        "value": "_caption-bottom-left"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_RIGHT_OPTION" },
+                        "value": "_caption-bottom-right"
+                    }
+                ]
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "fixed-background",
+            "label": { "key": "PROPERTY_FIXED_BACKGROUND_LABEL" },
+            "control": {
+                "type": "checkbox",
+                "value": "_fixed-background"
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "drop-capital",
+            "label": { "key": "PROPERTY_DROP_CAP_LABEL" },
+            "control": {
+                "type": "drop-capital",
+                "charactersMinimum": 1,
+                "charactersDefault": 1,
+                "charactersMaximum": 10,
+                "linesMinimum": 1,
+                "linesDefault": 3,
+                "linesMaximum": 10
+            },
+            "dataType": "data",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
+        },
+        {
+            "name": "text-align",
+            "label": { "key": "PROPERTY_TEXT_ALIGN_LABEL" },
+            "control": {
+                "type": "radio",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_LEFT_OPTION" },
+                        "icon": "icons/properties/text-align-left.svg"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_MIDDLE_OPTION" },
+                        "icon": "icons/properties/text-align-middle.svg",
+                        "value": "_align-middle"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_POSITION_RIGHT_OPTION" },
+                        "icon": "icons/properties/text-align-right.svg",
+                        "value": "_align-right"
+                    }
+                ]
+            },
+            "dataType": "styles",
+            "featureFlag": "ContentStation-LocalStyleOverrides"
+        },
+        {
+            "name": "style",
+            "label": { "key": "PROPERTY_VARIANT_LABEL" },
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_STYLE_DEFAULT_OPTION" }
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "1"} },
+                        "value": "_option1"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "2"} },
+                        "value": "_option2"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "3"} },
+                        "value": "_option3"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "4"} },
+                        "value": "_option4"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "5"} },
+                        "value": "_option5"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "6"} },
+                        "value": "_option6"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "7"} },
+                        "value": "_option7"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "8"} },
+                        "value": "_option8"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "9"} },
+                        "value": "_option9"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "10"} },
+                        "value": "_option10"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "11"} },
+                        "value": "_option11"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "12"} },
+                        "value": "_option12"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "13"} },
+                        "value": "_option13"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "14"} },
+                        "value": "_option14"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "15"} },
+                        "value": "_option15"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "16"} },
+                        "value": "_option16"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "17"} },
+                        "value": "_option17"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "18"} },
+                        "value": "_option18"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "19"} },
+                        "value": "_option19"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_VARIANT_STYLE_OPTION", "values": { "0" : "20"} },
+                        "value": "_option20"
+                    }
+                ]
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "fitting",
+            "label": { "key": "PROPERTY_FITTING_LABEL" },
+            "control": {
+                "type": "fitting"
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "slideshow-inside-caption",
+            "label": { "key": "PROPERTY_CAPTION_LABEL" },
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_OUTSIDE_OPTION" }
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_NONE_OPTION" },
+                        "value": "_caption-none"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_OPTION" },
+                        "value": "_caption-inside"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_OPTION" },
+                        "value": "_caption-top"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_LEFT_OPTION" },
+                        "value": "_caption-top-left"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_TOP_RIGHT_OPTION" },
+                        "value": "_caption-top-right"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_LEFT_OPTION" },
+                        "value": "_caption-bottom-left"
+                    },
+                    {
+                        "caption": { "key": "PROPERTY_CAPTION_BOTTOM_RIGHT_OPTION" },
+                        "value": "_caption-bottom-right"
+                    }
+                ]
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "slideshow-play-orientation",
+            "label": { "key": "PROPERTY_PLAY_ORIENTATION_LABEL"},
+            "control": {
+                "type": "select",
+                "options": [
+                    {
+                        "caption": { "key": "PROPERTY_PLAY_ORIENTATION_HORIZONTAL_OPTION" }
+                    },
+                    {
+                      "caption": { "key": "PROPERTY_PLAY_ORIENTATION_VERTICAL_OPTION" },
+                        "value": "_vertical"
+                    }
+                ]
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "slideshow-autoplay",
+            "label": { "key": "PROPERTY_AUTO_PLAY_LABEL" },
+            "control": {
+                "type": "checkbox",
+                "value": "_auto-play"
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "slideshow-filmstrip",
+            "label": { "key": "PROPERTY_SHOW_FILMSTRIP_LABEL" },
+            "control": {
+                "type": "checkbox",
+                "value": "_filmstrip"
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "disable-fullscreen",
+            "label": { "key": "PROPERTY_DISABLE_FULLSCREEN_LABEL" },
+            "control": {
+                "type": "disable-fullscreen-checkbox"
+            },
+            "dataType": "styles"
+        },
+        {
+            "name": "background-color",
+            "label": { "key": "PROPERTY_BACKGROUND_COLOR_LABEL" },
+            "control": {
+                "type": "colorPicker",
+                "opacity": true
+            },
+            "dataType": "inlineStyles"
+        },
+        {
+            "name": "edit-image",
+            "label": { "key": "PROPERTY_EDIT_IMAGE_LABEL" },
+            "control": {
+                "type": "image-editor",
+                "focuspoint": true
+            },
+            "dataType": "doc-image"
+        },
+        {
+            "name": "social-media-properties",
+            "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
+            "control": {
+                "type": "media-properties",
+                "mediaType": "social"
+            },
+            "dataType": "doc-media"
+        },
+        {
+            "name": "video-properties",
+            "label": { "key": "PROPERTY_MEDIA_PROPERTIES_LABEL" },
+            "control": {
+                "type": "media-properties",
+                "mediaType": "video"
+            },
+            "dataType": "doc-media"
+        },
+        {
+            "name": "slides",
+            "label": { "key": "PROPERTY_SLIDES_LABEL" },
+            "control": {
+                "type": "slides",
+                "include": [
+                    "edit-image"
+                ]
+            },
+            "dataType": "doc-slideshow"
+        },
+        {
+            "name": "embed-code",
+            "label": { "key": "PROPERTY_EMBED_CODE_LABEL" },
+            "control": {
+                "type": "textarea",
+                "inputPlaceholder": { "key": "PROPERTY_EMBED_CODE_PLACEHOLDER" }
+            },
+            "dataType": "doc-html"
+        },
+        {
+            "name": "hyperlink",
+            "label": { "key": "PROPERTY_HYPERLINK_LABEL" },
+            "control": {
+                "type": "url",
+                "inputPlaceholder": { "key": "PROPERTY_HYPERLINK_PLACEHOLDER" }
+            },
+            "dataType": "doc-link"
+        }
+    ],
+
+    "conversionRules": {
+        "body": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "intro": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "author": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "description": "text"
+                }
+            }
+        },
+        "title": {
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "subtitle": {
+            "title": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "title"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "title"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "title"
+                }
+            }
+        },
+        "headline": {
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "title": "title",
+                    "subtitle": "subtitle",
+                    "author": "section"
+                }
+            }
+        },
+        "intro": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "footer": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "quote": "auto",
+            "crosshead": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "crosshead": {
+            "title": "auto",
+            "subtitle": "auto",
+            "headline": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "hero": {
+                "type": "simple",
+                "map": {
+                    "subtitle": "text"
+                }
+            },
+            "intro": "auto",
+            "body": "auto",
+            "footer": "auto",
+            "quote": "auto",
+            "image": "auto",
+            "product": {
+                "type": "simple",
+                "map": {
+                    "product_title": "text"
+                }
+            }
+        },
+        "slideshow": {
+            "image": {
+                "type": "from-container",
+                "container": "slideshow"
+            }
+        },
+        "image": {
+            "hero": "auto",
+            "author": "auto",
+            "slideshow": {
+                "type": "to-container",
+                "container": "slideshow"
+            },
+            "product": "auto"
+        }
+    },
+
+    "scripts": [
+        "scripts/vendor.js"
+    ]
+}
