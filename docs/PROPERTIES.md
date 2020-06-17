@@ -147,9 +147,48 @@ Example of the `text` control type:
     }
 ```
 
+### `textarea`
+
+Allows text input from user in a large field.
+
+Example of the `textarea` control type:
+
+```json
+    "control": {
+        "type": "textarea",
+        "inputPlaceholder": "Placeholder text"
+    }
+```
+
+### `url`
+
+Allows url input from user.
+
+Example of the `url` control type:
+
+```json
+    "control": {
+        "type": "url",
+        "inputPlaceholder": "Placeholder url"
+    }
+```
+
 ### `time`
 
 Allows time input in three number boxes with hours, minutes and seconds. The data is stored as a string in the format `<hours>h<minutes>m<seconds>s`.
+
+### `colorPicker`
+
+Color picker with optional opacity slider. The data is stored as a string in the format `rgba(<red>,<green>,<blue>,<opacity>)`.
+
+Example of the `colorPicker` control type:
+
+```json
+    "control": {
+        "type": "colorPicker",
+        "opacity": true
+    }
+```
 
 ## Specialized UI Controls
 
@@ -180,6 +219,7 @@ Enables the fitting option for doc-image directives in the component. These are 
 
 Can only be used with doc-image directives and requires specifying the directive content key in the component properties list separated by a colon.
 
+Accepts default values `_fit-frame-height-to-content` and `_fit-frame-to-content`. If it is not set then `fit content to frame` rule will be applied.
 
 ### `slides`
 

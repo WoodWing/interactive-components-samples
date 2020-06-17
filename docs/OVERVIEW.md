@@ -15,7 +15,6 @@ The folder structure of a component set is defined as:
 | `templates/html/*.html` | 	Templates for the HTML rendition of the article. Used in editor and for publishing html.  |
 | `templates/styles/*.scss` | Default styling for this component set used with the html rendition. The customer may override this with custom styling. Styles folder may contain additional assets such as fonts and images. |
 | `templates/psv/*.html` | Templates for PSV rendition of the article. Used for publishing PSV to Custom Channels. |
-| `templates/facebook/*.html` | Templates for Facebook rendition of the article. Used for publishing to Facebook Instant Articles. |
 
 ## components-definition.json
 
@@ -52,6 +51,19 @@ The root of this file is defined as:
         ...
     },
 
+    "shortcuts": {
+        // Define keyboard shortcuts for changing a component to a different type.
+        // A keyboard shortcut consists of the modifier key Cmd (MacOS) or Ctrl (Windows) plus a number from 0 to 9.
+        // The first item in the list will have Cmd+1 or Ctrl+1 assigned, 
+        // the second item in the list will have Cmd+2 or Ctrl+2 assigned, and so on.
+        // A maximum of 10 keyboard shortcuts can be defined.
+        "conversionComponents": [
+            "component-identifier-1",   // <- Cmd+0
+            "component-identifier-2",   // <- Cmd+1
+            ...                         // <- etc...
+        ],
+    },
+
     // Javascript files included in the HTML rendition of the article (editor and published html articles).
     // These scripts provide additional functionality for components (for example the slideshow).
     "scripts": {
@@ -59,7 +71,7 @@ The root of this file is defined as:
     },
 
     // Default component's name on pressing Enter.
-    defaultComponentOnEnter: 'component-identifier'
+    "defaultComponentOnEnter": "component-identifier"
 }
 ```
 
