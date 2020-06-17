@@ -6,13 +6,16 @@ Components use the following definition:
 
 ```javascript
 {
-    // Unique identifier of component.
+    // Unique identifier for the component.
     "name": "component-identifier",
-    // Name shown in UI for component. See LOCALIZATION.md for information on how to localize.
+    
+    // Name that is shown in the UI for the component. 
+    // See LOCALIZATION.md for information on localization.
     "label": "Component",
-    // Path to icon image. Can be anything that is displayable by the browser.
-    // It's recommended to use either SVG, PNG or JPG.
-    // The icons should be roughly squared sized (for example 128 by 128 pixels).
+    
+    // Path to the icon image for the compoonent. Can be anything that is displayable by the browser.
+    // Recommended formats are SVG, PNG, or JPG.
+    // The icons should be roughly square in size (for example 128 by 128 pixels).
     "icon": "path-in-set",
 
     // List of properties available for this component.
@@ -21,26 +24,67 @@ Components use the following definition:
         ...
     ],
 
-    // How this component is selectable.
-    // By "default" the user can click inside the component to select it.
-    // The "handle" option adds a draggable bar with the component name at the right top of the component.
-    // This option is useful for components that have non clickable content (such as iframes).
+    // Method of selecting a component:
+    // - default: by clicking inside the component
+    // - handle: adds a handle to the top right corner of the component that can be clicked.
+    //           This option is useful for components that have non-clickable content such as Containers.
     "selectionMethod": "default" | "handle",
 
-    // Whether or not to count components by default towards article statistics (characters, words, paragraphs).
-    // Defaults to false.
+    // Include textual content of components in the article statistics: total number of characters, words,
+    // and paragraphs.
+    // Default = false.
     "countStatistics": true | false,
 
-    // Allows nesting the component in containers.
-    // Defaults to "yes".
+    // Allow nesting the component in containers.
+    // Default = yes.
     "allowNesting": "yes" | "no" | "one-level",
 
-    // Restricts children of this component to the listed ones.
-    // The "withContent" key can be used to filter down on the content of
-    // a directive. For example this can be used to require that a doc-image
-    // directive has an image applied by the user.
+    // Define which types of components can be made a child of another component.
+    // Use the "withContent" key to filter down on the content of a directive.
+    // For example this can be used to require that a doc-image directive has an image
+    // applied by the user.
     "restrictChildren": {
         "image-comp": { "withContent": "image" }
+    },
+
+    // (Optional) Override the default component that is added when pressing Enter (as defined in the global 
+    // "defaultComponentOnEnter" property).
+    // This can be useful for example in a Container when this behavior should be different compared to the main story.
+    // Introduced in version 1.1.0.
+    "defaultComponentOnEnter": "componentName"
+
+    // (Optional) Configure options per directive
+    "directiveOptions": {
+        "directiveKey": {
+            //
+            // Autofill
+            // (Introduced in version 1.1.0)
+            // (Optional) Define if the content of a component should be filled automatically.
+            // For example: automatically fill the caption of an image when an image is added to an article.
+            // Currently only works with Enterprise metadata only.
+            //
+            // Set different trigger options: 
+            // (Introduced in version 1.1.0, deprecated since version 1.2.0)
+            //   Once - means that it will only be triggered the first time
+            //   (in the case of filling a caption: when the image is added for the first time)
+            // 
+            "autofill": {
+                "source": "sourceDirectiveKey",
+                "metadataField": "ContentMetaData/Description" // Enterprise metadata format, case sensitive
+            },
+
+            // Groups
+            // (Optional) Configure groups for container directives.
+            // This allows overriding the components displayed in the Component window inside a Container.
+            // For example, you could design a list-type component that only displays a list item component
+            // inside its Container.
+            // Introduced in version 1.1.0.
+            "groups": [
+                {
+                    // Group definition, see GROUPS.md
+                }
+            ]
+        }
     }
 }
 ```
@@ -100,10 +144,3 @@ For example, the body component styling may look like:
 
 Custom channels support the option to receive the rendered article in [PSV format](http://www.prismstandard.org/specifications/psv/1.0/PSV_specification_1.0.htm). When using this option, you must define a template for each component to have a PSV rendition.
 The component is skipped in the PSV output when it has no matching template.
-
-## Facebook Instant Articles template
-
-Publishing to Facebook Instant Articles requires an HTML markup template for each component you wish to support.
-You should use the same directives to bind content to the template as used in the HTML template.
-The component is skipped in the Facebook output when it has no matching template.
-For more information please visit the [Facebook Instant Articles documentation](https://developers.facebook.com/docs/instant-articles/guides/format-overview).
