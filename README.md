@@ -8,8 +8,6 @@ This repository contains steps on how to create and configure these components a
 
 ### Important: This feature requires Content Station Aurora version 11.15 or higher
 
-Check [here](tree/1.0) if you're using a Content Station Aurora version between 11.6 and 11.15 and want to use interactive components.
-
 ## Configuration and Usage
 
 Configuring interactive components consists of two parts. The first is the **interactive content** itself which needs to be hosted on an accessible external web server. The second part is to create or extend a component set to include a **component** to make the interactive content available for use in the Digital Editor. This samples project is based on the [boilerplate project](https://github.com/WoodWing/csde-components-boilerplate) and extends it with two components.
